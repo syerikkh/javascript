@@ -104,11 +104,11 @@
 // Hard 1
 
 
-function findLongestIncreasingSubsequence(arr) {
-    let lis = [];
-    let d = arr[0];
-    for (i = 0; i < arr.length; i++) {
-        if (arr[i])
-    }
-}
-const array = [10, 9, 2, 5, 3, 7, 101, 18];
+// function findLongestIncreasingSubsequence(arr) {
+//     let lis = [];
+//     let d = arr[0];
+//     for (i = 0; i < arr.length; i++) {
+//         if (arr[i])
+//     }
+// }
+// const array = [10, 9, 2, 5, 3, 7, 101, 18];
