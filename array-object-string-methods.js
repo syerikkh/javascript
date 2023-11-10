@@ -8,8 +8,9 @@
 // console.log(sortedKeys);
 
 // const object = { b: 2, a: 1, c: 3 };
-// let sortedKeys = Object.values(object).sort();
+// let sortedKeys = Object.keys(object).sort();
 // console.log(sortedKeys);
+
 
 // 2
 
@@ -40,14 +41,14 @@
 
 // 3
 
-// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// console.log(array);
-// let reversedArray = array.reverse();
-// console.log(reversedArray);
-// let string = array.toString();
-// console.log(string);
-// let newString = string.replace(/,/g, "");
-// console.log(newString);
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(array);
+let reversedArray = array.reverse();
+console.log(reversedArray);
+let string = array.toString();
+console.log(string);
+let newString = string.replace(/,/g, "");
+console.log(newString);
 
 // 4
 
@@ -61,11 +62,11 @@
 
 // 5
 
-const students = [
-    { name: 'Alice', grades: [80, 90, 70] },
-    { name: 'Alice', grades: [60, 80, 70] },
-    { name: 'Alice', grades: [100, 60, 70] }
-]
-function findAverageGrades(students) {
-
-}
+// const students = [
+//     { name: 'Alice', grades: [80, 90, 70] },
+//     { name: 'Alice', grades: [60, 80, 70] },
+//     { name: 'Alice', grades: [100, 60, 70] }
+// ]
+// function findAverageGrades(students) {
+    
+// }
