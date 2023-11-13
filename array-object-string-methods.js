@@ -41,14 +41,14 @@
 
 // 3
 
-const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log(array);
-let reversedArray = array.reverse();
-console.log(reversedArray);
-let string = array.toString();
-console.log(string);
-let newString = string.replace(/,/g, "");
-console.log(newString);
+// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// console.log(array);
+// let reversedArray = array.reverse();
+// console.log(reversedArray);
+// let string = array.toString();
+// console.log(string);
+// let newString = string.replace(/,/g, "");
+// console.log(newString);
 
 // 4
 

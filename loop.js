@@ -116,4 +116,33 @@
 
 // 3
 
+// function isPalindrome(str) {
+//     const cleanString = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+//     for (i = 0; i < cleanString.length / 2; i++) {
+//         if (cleanString[i] !== cleanString[cleanString.length - 1 - i]) {
+//             return false
+//         }
+//     }
+//     return true
+// }
+// const word = 'A man, a plan, a canal: Panama'
+// console.log(isPalindrome(word));
 
+// 4 
+
+// function isPrime(num) {
+//     if (num < 2) {
+//         return 'анхны тоо, нийлмэл аль нь ч биш'
+//     }
+//     let sum = 1 + number;
+//     for (let i = 2; i < num; i++) {
+//         if (num % i == 0) {
+//             sum += i;
+//             return `Нийлбэр: ${sum}`
+//         }
+//     }
+//     return 'Анхны тоо'
+// }
+
+// const number = 12;
+// console.log(isPrime(number));
