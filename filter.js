@@ -27,6 +27,13 @@
 // const newArray = words.filter((el) => el.length > n);
 // console.log(newArray);
 
+// const words = ['hahaha', 'hehe', 'huhuhuhu', 'hh', 'hhi'];
+// let n = 5;
+// const newArray = words.filter(function (el) {
+//     return el.length > n;
+// });
+// console.log(newArray);
+
 //9
 // const numbers = [2, 4, 6, 11, 17, 9, 12, 5];
 // const primeNumbers = numbers.filter(function (el, i) {
@@ -43,9 +50,16 @@
 // console.log(primeNumbers);
 
 //10
-// const words = ['aahaha', 'hehe', 'bhhuhuhu', 'chh', 'shhi', 'ssss', 'sheesh'];
+
+// const words = ['aahaha', 'hehe', 'bhhuhuhu', 'chh', 'shhi', 'Ssss', 'sheesh'];
+// const letter = "S";
+// const newArray = words.filter((el) => el.charAt(0).toLowerCase() === letter.toLowerCase());
+// console.log(newArray);
+
+// const words = ['aahaha', 'hehe', 'bhhuhuhu', 'chh', 'shhi', 'Ssss', 'sheesh'];
+// const letter = "s";
 // const newArray = words.filter(function (el) {
-//     if (el[0].hasOwnProperty('s')) {
-//         return el
-//     })
-// return console.log(newArray);
+//     return el.charAt(0).toLowerCase() === letter.toLowerCase();
+// });
+// console.log(newArray);
+
