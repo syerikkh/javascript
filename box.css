@@ -6,8 +6,18 @@
 }
 
 .container {
+
     display: flex;
     gap: 20px;
     justify-content: center;
     align-items: center;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
 }

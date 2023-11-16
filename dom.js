@@ -1,19 +1,32 @@
+//Add element
+// const container = document.createElement("div");
+// const addbtn = document.getElementById("nemeh");
+// let i = 0;
+// function addBox() {
+//     i++
 
-const addbtn = document.getElementById("nemeh");
-let i = 0;
-function addBox() {
-    i++
-    const container = document.createElement("div");
+//     document.body.appendChild(container);
 
-    const box = document.createElement("div");
+//     const box = document.createElement("div");
 
-    box.classList.add("box");
-    box.innerText = i;
-    document.body.appendChild(container);
-    document.container.appendChild(box);
-}
+//     box.classList.add("box");
+//     container.classList.add("container");
+//     box.innerText = i;
 
-addbtn.addEventListener("click", addBox);
+//     container.appendChild(box);
+// }
+
+// addbtn.addEventListener("click", addBox);
+
+
+
+
+
+
+
+
+
+
 
 
 
