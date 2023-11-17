@@ -19,3 +19,4 @@
 // const allfirstNames = array.reduce((totalfirstname, firstname) => { return totalfirstname + firstname.firstName }, {});
 // console.log(allfirstNames);
 // console.log(array.map((el, i) => el.firstName))
+

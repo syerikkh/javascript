@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Filter</title>
+</head>
+
+<body>
+
+    <label for="search">Search: </label>
+    <input type="text" id="search">
+
+    <label for="type">Type: </label>
+    <select id="type">
+        <option value="">All</option>
+        <option value="cherry">Cherry</option>
+        <option value="banana">Banana</option>
+        <option value="apple">Apple</option>
+        <option value="orange">Orange</option>
+        <option value="kiwi">Kiwifruit</option>
+        <option value="watermelon">Watermelon</option>
+    </select>
+
+    <ul id="fruits">
+        <li id="cherry" data-type="cherry">Cherry</li>
+        <li id="banana" data-type="banana">Banana</li>
+        <li id="apple" data-type="apple">Apple</li>
+        <li id="orange" data-type="orange">Orange</li>
+        <li id="kiwi" data-type="kiwi">Kiwifruit</li>
+        <li id="watermelon" data-type="watermelon">Watermelon</li>
+    </ul>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("search");
+            const typeSelect = document.getElementById("type");
+            const fruitList = document.getElementById("fruits");
+
+            const fruitArray = Array.from(fruitList.children);
+
+            function filterFruits() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const selectedType = typeSelect.value;
+
+                const filteredArray = fruitArray.filter((fruit) =>
+                    (fruit.textContent.toLowerCase().includes(searchTerm) || selectedType === "" || fruit.dataset.type === selectedType)
+                );
+
+                fruitArray.forEach((fruit) => {
+                    fruit.style.display = filteredArray.includes(fruit) ? "list-item" : "none";
+                });
+            }
+
+            searchInput.addEventListener("input", filterFruits);
+            typeSelect.addEventListener("change", filterFruits);
+        });
+    </script>
+
+</body>
+
+</html>

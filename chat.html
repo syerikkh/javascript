@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Search Filter</title>
+    <style>
+        /* Add any additional styles if needed */
+        #searchInput {
+            margin-bottom: 10px;
+        }
+
+        .list-item {
+            display: none;
+            margin-bottom: 5px;
+        }
+
+        .list-item.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <label for="searchInput">Search: </label>
+    <input type="text" id="searchInput">
+
+    <ul id="fruitList">
+        <li class="list-item" data-type="apple">Apple</li>
+        <li class="list-item" data-type="banana">Banana</li>
+        <li class="list-item" data-type="cherry">Cherry</li>
+        <!-- Add more list items as needed -->
+    </ul>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("searchInput");
+            const fruitList = document.getElementById("fruitList");
+            const listItems = document.querySelectorAll(".list-item");
+
+            searchInput.addEventListener("input", function () {
+                const searchTerm = searchInput.value.toLowerCase();
+
+                listItems.forEach((item) => {
+                    const itemType = item.getAttribute("data-type").toLowerCase();
+                    const itemText = item.textContent.toLowerCase();
+
+                    if (itemType.includes(searchTerm) || itemText.includes(searchTerm)) {
+                        item.classList.add("show");
+                    } else {
+                        item.classList.remove("show");
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
