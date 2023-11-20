@@ -1,0 +1,21 @@
+img {
+    width: 600px;
+    height: 400px;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.slide {
+    display: flex;
+    gap: 20px;
+}
+
+.buttons {
+    position: relative;
+    left: 50%;
+}
