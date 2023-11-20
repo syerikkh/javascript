@@ -4,57 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Search Filter</title>
+    <title>Fading Colorful Circles</title>
     <style>
-        /* Add any additional styles if needed */
-        #searchInput {
-            margin-bottom: 10px;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
         }
 
-        .list-item {
-            display: none;
-            margin-bottom: 5px;
-        }
-
-        .list-item.show {
-            display: block;
+        .circles {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 10px;
+            background: linear-gradient(45deg, #3498db, #e74c3c);
+            /* Initial gradient color */
+            transition: background 1s ease-in-out;
+            /* Add transition for background */
         }
     </style>
 </head>
 
 <body>
 
-    <label for="searchInput">Search: </label>
-    <input type="text" id="searchInput">
-
-    <ul id="fruitList">
-        <li class="list-item" data-type="apple">Apple</li>
-        <li class="list-item" data-type="banana">Banana</li>
-        <li class="list-item" data-type="cherry">Cherry</li>
-        <!-- Add more list items as needed -->
-    </ul>
+    <label for="inputNumber">Enter the number of circles:</label>
+    <input type="number" id="inputNumber" value="5">
+    <button id="generateBtn">Generate Circles</button>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const searchInput = document.getElementById("searchInput");
-            const fruitList = document.getElementById("fruitList");
-            const listItems = document.querySelectorAll(".list-item");
+        function colorfulCircles() {
+            const inputNum = document.getElementById("inputNumber").value;
+            const container = document.createElement("div");
+            container.classList.add("container");
 
-            searchInput.addEventListener("input", function () {
-                const searchTerm = searchInput.value.toLowerCase();
+            for (let i = 0; i < inputNum; i++) {
+                const circles = document.createElement("div");
+                circles.classList.add("circles");
 
-                listItems.forEach((item) => {
-                    const itemType = item.getAttribute("data-type").toLowerCase();
-                    const itemText = item.textContent.toLowerCase();
+                // Start the color fade animation
+                startColorFadeAnimation(circles);
 
-                    if (itemType.includes(searchTerm) || itemText.includes(searchTerm)) {
-                        item.classList.add("show");
-                    } else {
-                        item.classList.remove("show");
-                    }
-                });
-            });
-        });
+                container.appendChild(circles);
+            }
+
+            const existingContainer = document.querySelector(".container");
+            if (existingContainer) {
+                existingContainer.innerHTML = ''; // Clear existing circles
+            }
+
+            document.body.appendChild(container);
+        }
+
+        const generateBtn = document.getElementById("generateBtn");
+        generateBtn.addEventListener("click", colorfulCircles);
+
+        function startColorFadeAnimation(element) {
+            setInterval(function () {
+                const randomHue = Math.floor(Math.random() * 360);
+                const gradientColor = `linear-gradient(45deg, hsl(${randomHue}, 70%, 60%), hsl(${(randomHue + 180) % 360}, 70%, 60%))`;
+                element.style.background = gradientColor;
+            }, 2000); // Change color every 2 seconds
+        }
     </script>
 
 </body>

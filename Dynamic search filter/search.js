@@ -6,7 +6,8 @@ document.getElementById("banana"),
 document.getElementById("apple"),
 document.getElementById("orange"),
 document.getElementById("kiwi"),
-document.getElementById("watermelon")];
+document.getElementById("watermelon"),
+document.getElementById("berry")];
 
 searchInput.addEventListener("input", function () {
     const search = searchInput.value.trim().toLowerCase();
