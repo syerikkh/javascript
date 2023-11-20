@@ -10,10 +10,10 @@ document.getElementById("watermelon"),
 document.getElementById("berry")];
 
 searchInput.addEventListener("input", function () {
-    const search = searchInput.value.trim().toLowerCase();
+    const search = searchInput.value.toLowerCase();
 
     fruitArray.forEach((el) => {
-        const fruitName = el.textContent.trim().toLowerCase();
+        const fruitName = el.textContent.toLowerCase();
         const shouldDisplay = fruitName.includes(search);
 
         if (shouldDisplay) {

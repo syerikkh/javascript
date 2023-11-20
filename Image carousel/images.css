@@ -1,18 +1,17 @@
-img {
-    width: 600px;
-    height: 400px;
-}
-
-.images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
-}
-
 .slide {
     display: flex;
     gap: 20px;
+    margin-top: 200px;
+    margin-bottom: 100px;
+    transition: ease 0.3s;
+
+
+}
+
+img {
+    width: 700px;
+    height: 500px;
+
 }
 
 .buttons {
