@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+}
+
+#maindiv {
+    width: 100%;
+    height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    cursor: pointer;
+}
+
+.half {
+    flex: 1;
+}
+
+.onehalf {
+
+    background-color: orange;
+}
+
+.otherhalf {
+
+    background-color: aquamarine;
+}
