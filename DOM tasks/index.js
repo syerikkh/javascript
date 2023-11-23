@@ -59,15 +59,14 @@ const messages = ["hahahaha",
     "huhuh"];
 
 
-
-function delay() {
-    for (let i = 0; i < messages.length; i++) {
-        setTimeout(() => {
-            console.log(messages[i]);
-        }
-            , i * 1000);
-    }
-}
-delay();
+// function delay() {
+//     for (let i = 0; i < messages.length; i++) {
+//         setTimeout(() => {
+//             console.log(messages[i]);
+//         }
+//             , i * 1000);
+//     }
+// }
+// delay();
 
 
