@@ -1,33 +1,48 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
 }
+
 
 :root {
     --backgroundColor: #ebecf0;
     --hoverColor: rgba(0, 0, 0, 0.1);
+    --taskBackgroundColor: rgba(0, 0, 0, 0.8);
 }
+
+/* 4 boards */
 
 body {
     background-color: aquamarine;
+    position: relative;
+
 }
 
 .container {
-    width: 920px;
+    width: 1320px;
+    height: 100vh;
     margin: auto;
     border: 1px solid red;
-    position: relative;
-    top: 100px;
+    top: 150px;
+
+
 }
 
 .boards {
     display: flex;
-
     justify-content: space-between;
+    padding-top: 200px;
+
+
+}
+
+.board-header {
+    font-weight: 800;
 }
 
 .board {
-    width: 220px;
+    width: 310px;
     background-color: var(--backgroundColor);
     border-radius: 8px;
     padding: 8px;
@@ -41,7 +56,7 @@ body {
 .addButton {
     display: flex;
     gap: 10px;
-    height: 25px;
+    height: 30px;
     padding: 8px;
     align-items: center;
     border-radius: 5px;
@@ -52,3 +67,98 @@ body {
     background-color: var(--hoverColor);
 
 }
+
+/* 4 boards */
+
+
+
+/* Middle task */
+.taskBackground {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--taskBackgroundColor);
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.middle {
+    width: 400px;
+    height: 550px;
+    border-radius: 8px;
+    border: 1px solid white;
+    position: absolute;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+}
+
+.titleInput {
+    display: flex;
+    flex-direction: column;
+}
+
+.titleInput input {
+    height: 30px;
+    border-radius: 5px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+}
+
+.description input {
+    height: 180px;
+    border-radius: 5px;
+
+}
+
+.status {
+    display: flex;
+    flex-direction: column;
+}
+
+.priority {
+    display: flex;
+    flex-direction: column;
+}
+
+.addTaskButton button {
+    background-color: black;
+    color: #fff;
+    width: 358px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.addedTask {
+
+    background-color: #fff;
+    display: flex;
+
+    gap: 17px;
+
+}
+
+#checkButton {
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+    display: none;
+
+}
+
+.li {
+    list-style-type: none;
+
+}
+
+/* Middle task */
