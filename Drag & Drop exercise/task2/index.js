@@ -5,15 +5,17 @@ dragMe.classList.add("dragMe");
 const drop = document.getElementById("drop-here");
 drop.classList.add("dropHere");
 
-dragMe.addEventListener("dragstart", (event) => {
-    console.log("dragstart");
-});
-drop.addEventListener("dragover", (event) => {
-    console.log("dragover");
-    event.preventDefault();
-});
-drop.addEventListener("drop", (event) => {
-    event.preventDefault();
 
-    console.log("drop");
-})
+
+dragMe.addEventListener("dragstart", function drag(event) {
+    event.dataTransfer.setData("text/plain", event.target.id);
+});
+drop.addEventListener("dragover", function dragover(event) {
+    event.preventDefault();
+});
+drop.addEventListener("drop", function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("text/plain");
+    event.target.appendChild(document.getElementById(data));
+});
+

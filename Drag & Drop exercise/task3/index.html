@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Drag and Drop</h1>
+    <div class="container" ondrop="drop(event)" ondragover="dragOver(event)">
+        <div id="drag-me" draggable="true" ondragstart="drag(event)">Drag me</div>
+    </div>
+    <br>
+    <div id="target" ondrop="drop(event)" ondragover="dragOver(event), changeBorderColor(event)">Drop here</div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

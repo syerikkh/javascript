@@ -1,0 +1,21 @@
+.container {
+    width: 70px;
+    height: 80px;
+    border: 1px solid grey;
+
+}
+
+.dragMe {
+    width: 70px;
+    height: 30px;
+    background-color: green;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.dropHere {
+    width: 100px;
+    height: 90px;
+    border: 2px dotted blue;
+}

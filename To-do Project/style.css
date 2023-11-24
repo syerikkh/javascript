@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --backgroundColor: #ebecf0;
+    --hoverColor: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: aquamarine;
+}
+
+.container {
+    width: 920px;
+    margin: auto;
+    border: 1px solid red;
+    position: relative;
+    top: 100px;
+}
+
+.boards {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.board {
+    width: 220px;
+    background-color: var(--backgroundColor);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+
+.addButton {
+    display: flex;
+    gap: 10px;
+    height: 25px;
+    padding: 8px;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.addButton:hover {
+    background-color: var(--hoverColor);
+
+}
