@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: teal;
+    position: relative;
+}
+
+.container {
+    width: 1120px;
+    height: 100vh;
+    margin: auto;
+    border: 1px solid red;
+
+}
+
+.boards {
+    margin-top: 100px;
+    border: 1px solid yellow;
+    display: flex;
+    gap: 20px;
+}
+
+.board {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.board-title {
+    font-size: 25px;
+    font-weight: 800;
+
+}
+
+.addCardButton {
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.addCardButton:hover {
+    background-color: gray;
+}
+
+/* Add task part */
+.addTaskBackground {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.addTaskCard {
+    background-color: #fff;
+
+    width: 390px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+    border-radius: 8px;
+}
+
+.addTaskHeader {
+    font-weight: 900;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+#description {
+    height: 150px;
+}
+
+#addTaskButton {
+    background-color: black;
+    color: #fff;
+    height: 30px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+
+
+/* Add task part */

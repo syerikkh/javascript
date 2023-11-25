@@ -1,21 +1,58 @@
-// Array of messages to display
-const messages = [
-    "Hello!",
-    "How are you?",
-    "I hope you're doing well.",
-    "Let me know if you have any questions!",
-];
+// Initialize an array to store tasks
+let tasks = [];
 
-// Function to display messages with a delay
-function displayMessages() {
-    // Iterate through the messages using a for loop
-    for (let i = 0; i < messages.length; i++) {
-        // Use setTimeout to create a delay for each message
-        setTimeout(() => {
-            console.log(messages[i]); // Display the current message
-        }, i * 1000); // The delay is multiplied by i to create a staggered effect
+// Function to add a new task
+function addTask() {
+    // Get the input element and its value
+    const taskInput = document.getElementById("taskInput");
+    const newTask = taskInput.value;
+
+    // Check if the input is not empty
+    if (newTask.trim() !== "") {
+        // Add the new task to the tasks array
+        tasks.push(newTask);
+
+        // Update the display by calling the renderTasks function
+        renderTasks();
+
+        // Clear the input field
+        taskInput.value = "";
     }
 }
 
-// Call the function to start displaying messages
-displayMessages();
+// Function to render tasks in the UI
+function renderTasks() {
+    // Get the taskList element
+    const taskList = document.getElementById("taskList");
+
+    // Clear the existing tasks in the UI
+    taskList.innerHTML = "";
+
+    // Loop through the tasks array and create a list item for each task
+    tasks.forEach((task, index) => {
+        const listItem = document.createElement("li");
+        listItem.textContent = task;
+
+        // Create a button for each task to remove it
+        const removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.onclick = function () {
+            removeTask(index);
+        };
+
+        // Append the task and remove button to the list item
+        listItem.appendChild(removeButton);
+
+        // Append the list item to the taskList
+        taskList.appendChild(listItem);
+    });
+}
+
+// Function to remove a task
+function removeTask(index) {
+    // Remove the task at the specified index from the tasks array
+    tasks.splice(index, 1);
+
+    // Update the display by calling the renderTasks function
+    renderTasks();
+}

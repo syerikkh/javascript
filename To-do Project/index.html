@@ -20,8 +20,9 @@
                     <h2>To do</h2>
                 </div>
                 <div draggable="true" class="addedTask">
-                    <button id="checkButton"><i class="fa-solid fa-check"></i></button>
-                    <div class="listsRef"></div>
+                    <div class="listsRef">
+                        <button id="checkButton"><i class="fa-solid fa-check"></i></button>
+                    </div>
 
                 </div>
                 <div class="addButton">
@@ -54,13 +55,13 @@
                             <div class="priority">
                                 <label for="priority">Priority</label>
                                 <select name="" id="priority">
-                                    <option value="">Low</option>
-                                    <option value="">Medium</option>
-                                    <option value="">High</option>
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
                                 </select>
                             </div>
                             <div class="addTaskButton">
-                                <button>Add task</button>
+                                <button id="addTaskBtn">Add task</button>
                             </div>
                         </div>
                     </div>
@@ -70,7 +71,11 @@
                 <div class="board-header">
                     <h2>In Progress</h2>
                 </div>
-                <div draggable="true" class="addedTask"></div>
+                <div draggable="true" class="addedTask">
+                    <button id="checkButton"><i class="fa-solid fa-check"></i></button>
+                    <div class="listsRef"></div>
+
+                </div>
                 <div class="addButton">
                     <i class="fa-solid fa-plus"></i>
                     Add card
@@ -80,7 +85,11 @@
                 <div class="board-header">
                     <h2>Stuck</h2>
                 </div>
-                <div draggable="true" class="addedTask"></div>
+                <div draggable="true" class="addedTask">
+                    <button id="checkButton"><i class="fa-solid fa-check"></i></button>
+                    <div class="listsRef"></div>
+
+                </div>
                 <div class="addButton">
                     <i class="fa-solid fa-plus"></i>
                     Add card
@@ -90,7 +99,11 @@
                 <div class="board-header">
                     <h2>Done</h2>
                 </div>
-                <div draggable="true" class="addedTask"></div>
+                <div draggable="true" class="addedTask">
+                    <button id="checkButton"><i class="fa-solid fa-check"></i></button>
+                    <div class="listsRef"></div>
+
+                </div>
                 <div class="addButton">
                     <i class="fa-solid fa-plus"></i>
                     Add card
