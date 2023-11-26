@@ -2,37 +2,43 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+
 }
 
 body {
-    background-color: teal;
+
     position: relative;
+    background-image: url(cool-background.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: cover;
 }
 
 .container {
     width: 1120px;
     height: 100vh;
     margin: auto;
-    border: 1px solid red;
+
 
 }
 
 .boards {
-    margin-top: 100px;
-    border: 1px solid yellow;
+    padding-top: 100px;
     display: flex;
     gap: 20px;
 }
 
 .board {
     width: 400px;
-    background-color: #fff;
+    border: 1px solid white;
+    box-shadow: 4px 4px teal;
     border-radius: 8px;
     padding: 10px;
-    border: 1px solid black;
+
     display: flex;
     flex-direction: column;
     gap: 20px;
+
 }
 
 .board-title {
@@ -48,7 +54,8 @@ body {
 }
 
 .addCardButton:hover {
-    background-color: gray;
+    background-color: #ffffffba;
+    transition: ease 0.3s;
 }
 
 /* Add task part */
@@ -62,12 +69,12 @@ body {
     position: absolute;
     left: 0;
     top: 0;
+    bottom: 0;
     display: none;
 }
 
 .addTaskCard {
-    background-color: #fff;
-
+    background-image: url(cool-background.png);
     width: 390px;
     height: 490px;
     display: flex;
@@ -85,6 +92,7 @@ body {
 
 #description {
     height: 150px;
+
 }
 
 #addTaskButton {
@@ -94,6 +102,18 @@ body {
     margin-top: 40px;
     cursor: pointer;
 }
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.addedCard {
+    display: flex;
+
+}
+
 
 
 
