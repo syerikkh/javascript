@@ -46,15 +46,14 @@ function render() {
 
     tasks.forEach(task => {
         const tasksList = getTasksList(task.status);
-        const addedCard = document.querySelector(".addedCard");
+
         if (tasksList) {
-            const doneButton = document.createElement("button");
-            doneButton.innerHTML = '<i class="fa-solid fa-check"></i>';
             const taskElement = document.createElement("li");
             taskElement.innerHTML = `<strong>${task.title}</strong><br>${task.description}<br><span style="border: 1px solid grey;">${task.priority}</span>`;
             tasksList.appendChild(taskElement);
-            addedCard.appendChild(doneButton);
-            addedCard.appendChild(tasksList);
+
+
+
         }
     });
 }
