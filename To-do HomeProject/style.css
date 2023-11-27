@@ -15,7 +15,7 @@ body {
 }
 
 .container {
-    width: 1120px;
+    width: 1320px;
     height: 100vh;
     margin: auto;
 
@@ -23,7 +23,7 @@ body {
 }
 
 .boards {
-    padding-top: 100px;
+    padding-top: 200px;
     display: flex;
     gap: 20px;
 }
@@ -38,12 +38,13 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    overflow: hidden;
 
 }
 
 .board-title {
-    font-size: 25px;
-    font-weight: 800;
+    font-size: 30px;
+    font-weight: 900;
 
 }
 
@@ -107,14 +108,57 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    padding: 0;
+
 }
 
-.addedCard {
+
+
+.taskElement {
+    list-style-type: none;
     display: flex;
+    flex-direction: column;
+    gap: 5px;
 
 }
 
+.title {
+    font-weight: 900;
+}
 
+.statusStyle {
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+    width: 65px;
+
+}
+
+.removeButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+}
+
+.card {
+    display: flex;
+    gap: 10px;
+    background-color: #ffffffba;
+
+    padding: 3px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.doneButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+
+}
 
 
 /* Add task part */
