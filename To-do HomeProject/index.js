@@ -6,7 +6,7 @@ addCardButtons.forEach(function (button) {
     });
 });
 
-let tasks = [];  // Hooson task array
+var tasks = [];  // Hooson task array
 
 function addTask() {  // Task add function
     const titleInputRef = document.getElementById("title");
@@ -43,7 +43,7 @@ document.querySelector(".addTaskCard").addEventListener("keydown", function (eve
     if (event.key === "Enter") {
         addTask();
     }
-})
+});
 
 
 
@@ -52,6 +52,10 @@ function render() {
 
     const addTaskBackground = document.querySelector(".addTaskBackground");
     addTaskBackground.style.display = "none";
+
+    const count = tasks.length;
+    const boardTitle = document.querySelector(".board-title");
+    boardTitle.appendChild(count);
 
     document.querySelectorAll(".tasks").forEach(tasksList => {
         tasksList.innerHTML = "";
@@ -66,22 +70,30 @@ function render() {
             const card = document.createElement("div");
             card.classList.add("card");
             card.draggable = "true";
-
             const doneButton = document.createElement("button");
             const removeButton = document.createElement("button");
             removeButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
             removeButton.classList.add("removeButton");
             removeButton.id = task.id;
+            function doneButtonStyle(button) {
+                button.style.backgroundColor = "black";
+                button.style.color = "white";
+            }
 
             removeButton.onclick = function () {
                 tasks = tasks.filter(task => task.id !== removeButton.id);
-                render()
+                render();
             };
             doneButton.innerHTML = '<i class="fa-solid fa-check"></i>';
             doneButton.classList.add("doneButton");
+
             doneButton.onclick = function () {
-                document.getElementById("done").querySelector(".tasks").appendChild(tasksList);
-            }
+                task.status = "done";
+                render();
+                doneButtonStyle(doneButton);
+
+            };
+
             const taskElement = document.createElement("li");
 
             taskElement.classList.add("taskElement");
@@ -89,11 +101,18 @@ function render() {
             card.appendChild(doneButton);
             card.appendChild(taskElement);
             card.appendChild(removeButton);
+
             tasksList.appendChild(card);
-        }
+        };
+
+
+        const card = document.querySelector(".card");
+        card.addEventListener("dragStart", function dragStart(event) {
+            console.log("dragstart");
+        })
         function dragStart(ev) {
             ev.dataTransfer.setData("text/plain", ev.target.id);
-            console.log("dragstart");
+
         };
         function dragOver(ev) {
             ev.preventDefault();
@@ -108,6 +127,7 @@ function render() {
     });
 
 }
+
 
 function getTasksList(status) {
     if (status === "to-do") {

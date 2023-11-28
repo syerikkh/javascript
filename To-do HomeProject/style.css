@@ -30,8 +30,8 @@ body {
 
 .board {
     width: 400px;
-    border: 1px solid white;
-    box-shadow: 4px 4px teal;
+    border: 2px solid white;
+    box-shadow: 5px 5px teal;
     border-radius: 8px;
     padding: 10px;
 
@@ -45,6 +45,15 @@ body {
 .board-title {
     font-size: 30px;
     font-weight: 900;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+
+}
+
+.count {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 19px;
 
 }
 
@@ -160,5 +169,8 @@ body {
 
 }
 
+.doneStyle {
+    background-color: black;
+}
 
 /* Add task part */
