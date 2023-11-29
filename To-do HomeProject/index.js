@@ -13,7 +13,7 @@ function addTask() {  // Task add function
     const descriptionInputRef = document.getElementById("description");
     const priorityRef = document.getElementById("priority");
     const statusRef = document.getElementById("status");
-    var id = "id" + Math.random().toString(16).slice(2)
+    let id = "id" + Math.random().toString(16).slice(2)
 
     const newTask = {
         title: titleInputRef.value,
@@ -49,27 +49,31 @@ document.querySelector(".addTaskCard").addEventListener("keydown", function (eve
 
 
 function render() {
-
     const addTaskBackground = document.querySelector(".addTaskBackground");
     addTaskBackground.style.display = "none";
 
-    const count = tasks.length;
-    const boardTitle = document.querySelector(".board-title");
-    boardTitle.appendChild(count);
+
+    // const count = tasks.length;
+    // const boardTitle = document.querySelector(".board-title");
+    // boardTitle.appendChild(count);
 
     document.querySelectorAll(".tasks").forEach(tasksList => {
         tasksList.innerHTML = "";
 
     });
 
-
     tasks.forEach(task => {
 
         const tasksList = getTasksList(task.status);
         if (tasksList) {
+
             const card = document.createElement("div");
             card.classList.add("card");
-            card.draggable = "true";
+            card.draggable = true;
+            card.addEventListener("dragstart", dragStart);
+            document.getElementById("in-progress").addEventListener("dragover", dragOver);
+            document.getElementById("in-progress").addEventListener("drop", drop);
+
             const doneButton = document.createElement("button");
             const removeButton = document.createElement("button");
             removeButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
@@ -86,14 +90,30 @@ function render() {
             };
             doneButton.innerHTML = '<i class="fa-solid fa-check"></i>';
             doneButton.classList.add("doneButton");
-
+            if (task.status === "done") {
+                doneButton.style.backgroundColor = "black";
+                doneButton.style.color = "white";
+            }
             doneButton.onclick = function () {
                 task.status = "done";
                 render();
-                doneButtonStyle(doneButton);
 
             };
+            const editButton = document.createElement("button");
+            editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+            editButton.classList.add("editButton");
+            editButton.addEventListener("click", function () {
+                document.getElementById("title").value = task.title;
+                document.getElementById("description").value = task.description;
+                document.getElementById("status").value = task.status;
+                document.getElementById("priority").value = task.priority;
+                addTaskBackground.style.display = "flex";
+                task.title = "";
+                task.description = "";
+                task.status = "";
+                task.priority = "";
 
+            });
             const taskElement = document.createElement("li");
 
             taskElement.classList.add("taskElement");
@@ -101,33 +121,35 @@ function render() {
             card.appendChild(doneButton);
             card.appendChild(taskElement);
             card.appendChild(removeButton);
-
+            card.appendChild(editButton);
             tasksList.appendChild(card);
         };
 
 
-        const card = document.querySelector(".card");
-        card.addEventListener("dragStart", function dragStart(event) {
-            console.log("dragstart");
-        })
+
+
         function dragStart(ev) {
             ev.dataTransfer.setData("text/plain", ev.target.id);
-
+            console.log("dragstart");
         };
         function dragOver(ev) {
             ev.preventDefault();
-
+            console.log("dragover");
         };
         function drop(ev) {
+
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text/plain");
+            console.log(ev.target);
             ev.target.appendChild(document.getElementById(data));
 
-        }
+            console.log("drop");
+
+        };
+
     });
 
 }
-
 
 function getTasksList(status) {
     if (status === "to-do") {
@@ -143,4 +165,3 @@ function getTasksList(status) {
     }
 
 };
-
