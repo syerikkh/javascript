@@ -17,7 +17,7 @@
         <div class="boards">
             <div class="board" id="to-do">
                 <div class="board-title">To Do
-                    <span class="count" id="todo-count"></span>
+                    <span class="count" id="todo-count">0</span>
                 </div>
                 <div class="addedCard">
                     <div class="addedTasksCard">
@@ -33,7 +33,7 @@
             </div>
             <div class="board" id="in-progress">
                 <div class="board-title">In Progress
-                    <span class="count" id="inprogress-count"></span>
+                    <span class="count" id="inprogress-count">0</span>
                 </div>
                 <div class="addedCard">
                     <div class="addedTasksCard">
@@ -48,7 +48,7 @@
             </div>
             <div class="board" id="stuck">
                 <div class="board-title">Stuck
-                    <span class="count" id="stuck-count"></span>
+                    <span class="count" id="stuck-count">0</span>
                 </div>
                 <div class="addedCard">
                     <div class="addedTasksCard">
@@ -63,7 +63,7 @@
             </div>
             <div class="board" id="done">
                 <div class="board-title">Done
-                    <span class="count" id="done-count"></span>
+                    <span class="count" id="done-count">0</span>
                 </div>
                 <div class="addedCard">
                     <div class="addedTasksCard">
@@ -78,9 +78,8 @@
             </div>
         </div>
         <div class="addtaskContainer">
-
-        </div>
-        <div class="addTaskBackground">
+            <div class="addTaskBackground">
+            </div>
             <div class="addTaskCard">
                 <div class="addTaskHeader">Add Task</div>
 
@@ -100,7 +99,7 @@
                 </select>
 
                 <label for="priority">Priority: </label>
-                <select name="" id="priority">
+                <select name="" id="priority" class="priorityclass">
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>

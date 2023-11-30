@@ -3,6 +3,8 @@ addCardButtons.forEach(function (button) {
     button.addEventListener("click", function () {
         const addTaskBackground = document.querySelector(".addTaskBackground");
         addTaskBackground.style.display = "flex";
+        const addTaskCard = document.querySelector(".addTaskCard");
+        addTaskCard.style.display = "flex";
     });
 });
 
@@ -26,13 +28,13 @@ function addTask() {  // Task add function
 
     if (newTask.title !== "" && newTask.description !== "" && newTask.description !== "" && newTask.status !== "") {
         tasks.push(newTask);
-        titleInputRef.value = ""; // value hoosloh
-        descriptionInputRef.value = "";
-        priorityRef.value = "";
-        statusRef.value = "";
+
         render();
     }
-
+    titleInputRef.value = ""; // value hoosloh
+    descriptionInputRef.value = "";
+    priorityRef.value = "";
+    statusRef.value = "";
 
 };
 
@@ -45,17 +47,22 @@ document.querySelector(".addTaskCard").addEventListener("keydown", function (eve
     }
 });
 
+const addTaskBackground = document.querySelector(".addTaskBackground");
+addTaskBackground.addEventListener("click", function () {
+    const addTaskBackground = document.querySelector(".addTaskBackground");
+    addTaskBackground.style.display = "none";
+    const addTaskCard = document.querySelector(".addTaskCard");
+    addTaskCard.style.display = "none";
+})
+
 
 
 
 function render() {
     const addTaskBackground = document.querySelector(".addTaskBackground");
     addTaskBackground.style.display = "none";
-
-
-    // const count = tasks.length;
-    // const boardTitle = document.querySelector(".board-title");
-    // boardTitle.appendChild(count);
+    const addTaskCard = document.querySelector(".addTaskCard");
+    addTaskCard.style.display = "none";
 
     document.querySelectorAll(".tasks").forEach(tasksList => {
         tasksList.innerHTML = "";
@@ -63,8 +70,31 @@ function render() {
     });
 
     tasks.forEach(task => {
+        const priorityClass = document.querySelector(".priorityclass");
+        const priorityArray = Array.from(priorityClass);
+
+        priorityArray.sort(function (a, b) { return b - a });
 
         const tasksList = getTasksList(task.status);
+        const todoCount = document.getElementById("todo-count");
+        const inprogressCount = document.getElementById("inprogress-count");
+        const stuckCount = document.getElementById("stuck-count");
+        const doneCount = document.getElementById("done-count");
+
+        if (task.status === "to-do") {
+            todoCount.textContent = "";
+            todoCount.textContent = getTasksList("to-do").childElementCount + 1;
+        } else if (task.status === "in-progress") {
+            inprogressCount.textContent = "";
+            inprogressCount.textContent = getTasksList("in-progress").childElementCount + 1;
+        } else if (task.status === "stuck") {
+            stuckCount.textContent = "";
+            stuckCount.textContent = getTasksList("stuck").childElementCount + 1;
+        } else if (task.status === "done") {
+            doneCount.textContent = "";
+            doneCount.textContent = getTasksList("done").childElementCount + 1;
+        };
+
         if (tasksList) {
 
             const card = document.createElement("div");
@@ -87,6 +117,24 @@ function render() {
             removeButton.onclick = function () {
                 tasks = tasks.filter(task => task.id !== removeButton.id);
                 render();
+                const todoCount = document.getElementById("todo-count");
+                const inprogressCount = document.getElementById("inprogress-count");
+                const stuckCount = document.getElementById("stuck-count");
+                const doneCount = document.getElementById("done-count");
+
+                if (task.status === "to-do") {
+                    todoCount.textContent = "";
+                    todoCount.textContent = getTasksList("to-do").childElementCount;
+                } else if (task.status === "in-progress") {
+                    inprogressCount.textContent = "";
+                    inprogressCount.textContent = getTasksList("in-progress").childElementCount;
+                } else if (task.status === "stuck") {
+                    stuckCount.textContent = "";
+                    stuckCount.textContent = getTasksList("stuck").childElementCount;
+                } else if (task.status === "done") {
+                    doneCount.textContent = "";
+                    doneCount.textContent = getTasksList("done").childElementCount;
+                };
             };
             doneButton.innerHTML = '<i class="fa-solid fa-check"></i>';
             doneButton.classList.add("doneButton");
@@ -97,7 +145,15 @@ function render() {
             doneButton.onclick = function () {
                 task.status = "done";
                 render();
-
+                const todoCount = document.getElementById("todo-count");
+                const inprogressCount = document.getElementById("inprogress-count");
+                const stuckCount = document.getElementById("stuck-count");
+                const doneCount = document.getElementById("done-count");
+                if (task.status === "done") {
+                    todoCount.textContent = getTasksList("to-do").childElementCount;
+                    inprogressCount.textContent = getTasksList("in-progress").childElementCount;
+                    stuckCount.textContent = getTasksList("stuck").childElementCount;
+                }
             };
             const editButton = document.createElement("button");
             editButton.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
@@ -149,8 +205,7 @@ function render() {
 
     });
 
-}
-
+};
 function getTasksList(status) {
     if (status === "to-do") {
         return document.getElementById("to-do").querySelector(".tasks");
@@ -165,3 +220,5 @@ function getTasksList(status) {
     }
 
 };
+
+
