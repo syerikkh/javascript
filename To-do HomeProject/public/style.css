@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+body {
+
+    position: relative;
+    background-image: url(cool-background.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boards {
+    padding-top: 200px;
+    display: flex;
+    gap: 20px;
+}
+
+.board {
+    width: 400px;
+    border: 3px solid white;
+    box-shadow: 7px 7px teal;
+    border-radius: 8px;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+
+}
+
+.board-title {
+    font-size: 30px;
+    font-weight: 900;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+
+}
+
+.count {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 19px;
+
+}
+
+.addCardButton {
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.addCardButton:hover {
+    background-color: #ffffffba;
+    transition: ease 0.3s;
+}
+
+/* Add task part */
+.addTaskBackground {
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+
+}
+
+.addTaskCard {
+    background-image: url(cool-background.png);
+    width: 430px;
+    height: 590px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 20px;
+    gap: 5px;
+    border-radius: 8px;
+    display: none;
+    position: fixed;
+    left: 39vw;
+    bottom: 21vh;
+}
+
+.addTaskHeader {
+    font-weight: 900;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+#title {
+    border-radius: 4px;
+}
+
+#status {
+    border-radius: 4px;
+}
+
+#priority {
+    border-radius: 4px;
+}
+
+#description {
+
+    height: 150px;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+
+#addTaskButton {
+    background-color: black;
+    color: #fff;
+    height: 35px;
+    margin-top: 70px;
+    cursor: pointer;
+    border: none;
+
+}
+
+#addTaskButton:hover {
+    border: 1px solid white;
+
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+
+}
+
+
+
+.taskElement {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.title {
+    font-weight: 900;
+}
+
+.statusStyle {
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;
+    width: 65px;
+
+}
+
+.removeButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.card {
+    display: flex;
+    gap: 10px;
+    background-color: #ffffffba;
+    padding: 3px;
+    border-radius: 5px;
+    position: relative;
+
+}
+
+.doneButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.doneStyle {
+    background-color: black;
+}
+
+.editButton {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid black;
+}
+
+/* Add task part */
+
+@media only screen and (max-width:480px) {
+    .boards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    body {
+        position: relative;
+        background-image: url(cool-background.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-size: cover;
+    }
+
+    .board {
+        width: 350px;
+        border: 3px solid white;
+        box-shadow: 7px 7px teal;
+        border-radius: 8px;
+        padding: 10px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        overflow: hidden;
+
+    }
+
+    .container {
+        display: flex;
+        height: 100vh;
+        align-items: start;
+    }
+
+    .addTaskCard {
+        background-image: url(cool-background.png);
+        width: 300px;
+        height: 590px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 5px;
+        border-radius: 8px;
+        display: none;
+        position: fixed;
+        left: 20%;
+        bottom: 21vh;
+    }
+}

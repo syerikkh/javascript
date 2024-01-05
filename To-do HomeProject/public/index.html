@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do List</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/9741/9741158.png">
+    <script src="https://kit.fontawesome.com/87182c23db.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="boards">
+            <div class="board" id="to-do">
+                <div class="board-title">To Do
+                    <span class="count" id="todo-count">0</span>
+                </div>
+                <div class="addedCard">
+                    <div class="addedTasksCard">
+                        <ul class="tasks">
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="addCardButton">
+                    <i class="fa-solid fa-plus"></i>
+                    Add card
+                </div>
+            </div>
+            <div class="board" id="in-progress">
+                <div class="board-title">In Progress
+                    <span class="count" id="inprogress-count">0</span>
+                </div>
+                <div class="addedCard">
+                    <div class="addedTasksCard">
+                        <ul class="tasks">
+                        </ul>
+                    </div>
+                </div>
+                <div class="addCardButton">
+                    <i class="fa-solid fa-plus"></i>
+                    Add card
+                </div>
+            </div>
+            <div class="board" id="stuck">
+                <div class="board-title">Stuck
+                    <span class="count" id="stuck-count">0</span>
+                </div>
+                <div class="addedCard">
+                    <div class="addedTasksCard">
+                        <ul class="tasks">
+                        </ul>
+                    </div>
+                </div>
+                <div class="addCardButton">
+                    <i class="fa-solid fa-plus"></i>
+                    Add card
+                </div>
+            </div>
+            <div class="board" id="done">
+                <div class="board-title">Done
+                    <span class="count" id="done-count">0</span>
+                </div>
+                <div class="addedCard">
+                    <div class="addedTasksCard">
+                        <ul class="tasks">
+                        </ul>
+                    </div>
+                </div>
+                <div class="addCardButton">
+                    <i class="fa-solid fa-plus"></i>
+                    Add card
+                </div>
+            </div>
+        </div>
+        <div class="addtaskContainer">
+            <div class="addTaskBackground">
+            </div>
+            <div class="addTaskCard">
+                <div class="addTaskHeader">Add Task</div>
+
+                <label for="title">Title: </label>
+                <input type="text" id="title">
+
+
+                <label for="description">Description: </label>
+                <textarea name="" id="description" cols="30" rows="10"></textarea>
+
+                <label for="status">Status: </label>
+                <select name="" id="status">
+                    <option value="to-do">To do</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="stuck">Stuck</option>
+                    <option value="done">Done</option>
+                </select>
+
+                <label for="priority">Priority: </label>
+                <select name="" id="priority" class="priorityclass">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button id="addTaskButton">Add Task</button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
